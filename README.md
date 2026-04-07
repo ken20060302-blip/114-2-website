@@ -1,38 +1,50 @@
-# hw01
+# GitHub 偵察機
 
-This template should help get you started developing with Vue 3 in Vite.
+用 Vue 3 + Vite 打造的網頁應用，可以搜尋 GitHub 用戶並顯示大頭貼與基本資料。
 
-## Recommended IDE Setup
+---
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 照片變圓的原理
 
-## Recommended Browser Setup
+### 程式碼
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
+```css
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid #e94560;
+}
 ```
 
-### Compile and Hot-Reload for Development
+### 比喻解說
 
-```sh
-npm run dev
+想像你的照片一開始是一張**方形的便利貼**，`border-radius: 50%` 就像拿一個**超大的圓形模具**，去「切掉」便利貼的四個角：
+
+```
+┌─────────┐
+│ 便利貼  │  →  用圓形模具切角  →  ◯ 圓形照片
+└─────────┘
 ```
 
-### Compile and Minify for Production
+- `50%` 的意思是：「模具的大小跟便利貼的寬度一樣」
+- 這樣四個角全部被切光，就變成一個完整的圓形
+
+### 各種圓角效果
+
+| 數值 | 效果 |
+|------|------|
+| `border-radius: 0%` | □ 方形（預設） |
+| `border-radius: 25%` | ⬜ 微微圓 |
+| `border-radius: 50%` | ○ 完整圓形 |
+
+---
+
+## 專案指令
 
 ```sh
-npm run build
+npm install        # 安裝工具
+npm run dev        # 開始開發
+npm run build      # 打包成品
+npm run preview    # 預覽打包結果
 ```
